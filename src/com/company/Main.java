@@ -1,15 +1,10 @@
 package com.company;
 
 
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
-
-import java.io.*;
-import java.text.SimpleDateFormat;
-import java.util.*;
-
 import static java.lang.System.getenv;
-/* let's try commit this once.
+
+/*try to commit some changes*/
+/*
 public class Main {
 
     public static void main(String[] args) {
