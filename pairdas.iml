@@ -13,6 +13,7 @@
     <orderEntry type="library" name="htsjdk-1.123" level="project" />
     <orderEntry type="library" name="GenomeAnalysisTK1" level="project" />
     <orderEntry type="library" name="sajr" level="project" />
+    <orderEntry type="library" name="commons-io-2.4-javadoc" level="project" />
   </component>
 </module>
 
