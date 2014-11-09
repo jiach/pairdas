@@ -135,7 +135,7 @@ public class Main {
 public class Main {
     public static void main(String[] args){
         String homeDir = getenv("HOME");
-        String filename = homeDir+"/Dropbox/Dissertation_2014/DAS_Paird/GRCh38_UCSC_matrix_1_22_XY_6_or_less_iso.txt";
+        String filename = homeDir+"/IdeaProjects/pairdas/data/refgene_combined";
         System.out.println(filename);
         IsoformRegionMatrixParser genePredParser = new IsoformRegionMatrixParser(filename);
         genePredParser.printAll();

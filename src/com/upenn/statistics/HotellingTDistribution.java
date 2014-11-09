@@ -18,7 +18,7 @@ public class HotellingTDistribution {
     }
 
 
-    double getPValue(double q){
+    public double getPValue(double q){
         return(1-this.FDist.cumulativeProbability((double)(m-p+1)/(double)p/(double)m*q));
     }
 

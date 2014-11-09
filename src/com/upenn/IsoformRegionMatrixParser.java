@@ -71,9 +71,9 @@ public class IsoformRegionMatrixParser {
         Iterator<GeneIsoformInfo> itrGeneList = this.geneList.iterator();
         try {
             String homeDir = getenv("HOME");
-            BufferedWriter bw1 = new BufferedWriter(new FileWriter(homeDir+"/Dropbox/Dissertation_2014/DAS_Paird/1" +
+            BufferedWriter bw1 = new BufferedWriter(new FileWriter(homeDir+"/IdeaProjects/pairdas/data/1" +
                     ".txt"));
-            BufferedWriter bw2 = new BufferedWriter(new FileWriter(homeDir+"/Dropbox/Dissertation_2014/DAS_Paird/2.txt"));
+            BufferedWriter bw2 = new BufferedWriter(new FileWriter(homeDir+"/IdeaProjects/pairdas/data/2.txt"));
 
         while(itrGeneList.hasNext()){
             GeneIsoformInfo curGene = itrGeneList.next();
