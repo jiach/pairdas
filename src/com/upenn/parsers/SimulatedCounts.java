@@ -58,7 +58,7 @@ public class SimulatedCounts {
         return sortedID;
     }
 
-    private int getNumRegions(String geneName){
+    public int getNumRegions(String geneName){
         if (!this.countTable.containsRow(geneName)) return -1;
         String[] allIDs = this.getSortedSubIDFromGene(geneName);
         int firstPersonRegionCount = this.countTable.row(geneName).get(allIDs[0]).get(0).size();
@@ -69,6 +69,10 @@ public class SimulatedCounts {
         }
         return firstPersonRegionCount;
 
+    }
+
+    public Boolean containsGene(String geneName){
+        return this.countTable.containsRow(geneName);
     }
 
 }

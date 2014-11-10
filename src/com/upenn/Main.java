@@ -1,11 +1,13 @@
 package com.upenn;
 
 
+import com.upenn.annotation.GeneIsoformInfo;
 import com.upenn.parsers.SimulatedCountParser;
 import com.upenn.parsers.SimulatedCounts;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Iterator;
 
 import static java.lang.System.getenv;
 
@@ -146,6 +148,25 @@ public class Main {
         SimulatedCountParser countParser = new SimulatedCountParser
                 (homeDir+"/IdeaProjects/pairdas/data/simu_counts_alt.txt");
         SimulatedCounts altCounts = countParser.ReadAllCounts();
-        System.out.print(Arrays.toString(altCounts.getSortedSubIDFromGene("IFFO1")));
+        /*int trueTrue = 0;
+        int trueFalse = 0;
+        int falseFalse = 0;
+        for (GeneIsoformInfo curGene : genePredParser.geneList) {
+            if (altCounts.containsGene(curGene.getName())) {
+                if (altCounts.getNumRegions(curGene.getName()) == curGene.getNumberRegions()) {
+                    System.out.println(curGene.getName() + ":\tTrue\tTrue");
+                    trueTrue +=1;
+                } else {
+                    System.out.println(curGene.getName() + ":\tTrue\tFalse");
+                    trueFalse +=1;
+                }
+            } else {
+                System.out.println(curGene.getName() + ":\tFalse\tFalse");
+                falseFalse +=1;
+            }
+        }
+        System.out.println(Integer.toString(trueTrue)+"\t"+Integer.toString(trueFalse)+"\t"+Integer.toString
+                (falseFalse));
+    */
     }
 }

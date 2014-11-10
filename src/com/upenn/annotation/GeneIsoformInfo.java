@@ -11,6 +11,7 @@ import java.util.List;
 /**
  * Created by cheng on 8/29/14.
  */
+
 public class GeneIsoformInfo {
     static int totalGeneNum = 0;
     String name="Generic";
@@ -84,7 +85,7 @@ public class GeneIsoformInfo {
         return(totalGeneNum);
     }
 
-    int getNumberRegions()
+    public int getNumberRegions()
     {
         return(this.numberRegions);
     }
@@ -99,6 +100,10 @@ public class GeneIsoformInfo {
 
     int[][] getRegIsoMat(){
         return(this.regIsoMat);
+    }
+
+    public String getName(){
+        return this.name;
     }
 
     public void verifyAllIso(){
