@@ -1,6 +1,8 @@
 package com.upenn.annotation;
 
 import com.upenn.statistics.HotellingTDistribution;
+import org.apache.commons.math3.analysis.function.Log;
+import org.apache.commons.math3.distribution.ChiSquaredDistribution;
 import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.RealMatrix;
@@ -121,6 +123,16 @@ public class ReadsMatrix {
     /*OK, the getHotellingTPVals() method assumes BLOCK input
     * Input need to be in blocks with the data of one subject in one block
     * and sorted according to region.*/
+    public Double getFishersPValue(Boolean verbose){
+        Double[] rawPValues = this.getHotellingTPValsPairedTSignExcl(false);
+        ChiSquaredDistribution chiSquared = new ChiSquaredDistribution(2*rawPValues.length);
+        Double chiStat = (double)0;
+        Log logFunc = new Log();
+        for (int i = 0; i < rawPValues.length; i++) {
+            chiStat += (-2*logFunc.value(rawPValues[i]));
+        }
+        return 1-chiSquared.cumulativeProbability(chiStat);
+    }
 
     public Double[] getHotellingTPValsSignInc(Boolean verbose){
         Iterator<GroupInfo> itrRegion=this.geneIsoformInfo.listRegionGroup.listRegionGroup.iterator();
@@ -180,6 +192,7 @@ public class ReadsMatrix {
 
         return allPVals.toArray((new Double[allPVals.size()]));
     }
+
     private Double getHotellingTPvalsFromMatrix(RealMatrix logRatiosMatrix, Boolean verbose){
         Covariance logRatioCov = new Covariance(logRatiosMatrix,true);
         //covariance is bias-corrected, meaning using n-1 instead of n

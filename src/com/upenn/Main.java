@@ -1,6 +1,12 @@
 package com.upenn;
 
 
+import com.upenn.parsers.SimulatedCountParser;
+import com.upenn.parsers.SimulatedCounts;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 import static java.lang.System.getenv;
 
 /*try to commit some changes*/
@@ -136,8 +142,10 @@ public class Main {
     public static void main(String[] args){
         String homeDir = getenv("HOME");
         String filename = homeDir+"/IdeaProjects/pairdas/data/refgene_combined";
-        System.out.println(filename);
         IsoformRegionMatrixParser genePredParser = new IsoformRegionMatrixParser(filename);
-
+        SimulatedCountParser countParser = new SimulatedCountParser
+                (homeDir+"/IdeaProjects/pairdas/data/simu_counts_alt.txt");
+        SimulatedCounts altCounts = countParser.ReadAllCounts();
+        System.out.print(Arrays.toString(altCounts.getSortedSubIDFromGene("IFFO1")));
     }
 }
