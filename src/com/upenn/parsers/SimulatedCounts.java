@@ -75,4 +75,8 @@ public class SimulatedCounts {
         return this.countTable.containsRow(geneName);
     }
 
+    public getFishersPvalueForGene(String geneName){
+        
+    }
+
 }
