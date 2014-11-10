@@ -138,6 +138,6 @@ public class Main {
         String filename = homeDir+"/IdeaProjects/pairdas/data/refgene_combined";
         System.out.println(filename);
         IsoformRegionMatrixParser genePredParser = new IsoformRegionMatrixParser(filename);
-        genePredParser.printAll();
+
     }
 }

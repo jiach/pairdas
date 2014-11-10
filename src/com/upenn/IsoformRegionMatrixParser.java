@@ -68,22 +68,6 @@ public class IsoformRegionMatrixParser {
     }
 
     public void printAll(){
-        Iterator<GeneIsoformInfo> itrGeneList = this.geneList.iterator();
-        try {
-            String homeDir = getenv("HOME");
-            BufferedWriter bw1 = new BufferedWriter(new FileWriter(homeDir+"/IdeaProjects/pairdas/data/1" +
-                    ".txt"));
-            BufferedWriter bw2 = new BufferedWriter(new FileWriter(homeDir+"/IdeaProjects/pairdas/data/2.txt"));
-
-        while(itrGeneList.hasNext()){
-            GeneIsoformInfo curGene = itrGeneList.next();
-            //curGene.verifyAllIso();
-            curGene.printNumRegions(bw1,bw2);
-        }
-            bw1.flush();
-            bw2.flush();
-        } catch (IOException e) {
-            System.out.println("Cannot open files!");
-        }
+        
     }
 }
