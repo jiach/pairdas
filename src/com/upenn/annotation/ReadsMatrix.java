@@ -125,11 +125,14 @@ public class ReadsMatrix {
     * and sorted according to region.*/
     public Double getFishersPValue(Boolean verbose){
         Double[] rawPValues = this.getHotellingTPValsPairedTSignExcl(false);
+        if (rawPValues.length==0) return Double.valueOf(-1);
         ChiSquaredDistribution chiSquared = new ChiSquaredDistribution(2*rawPValues.length);
         Double chiStat = (double)0;
         Log logFunc = new Log();
         for (int i = 0; i < rawPValues.length; i++) {
-            chiStat += (-2*logFunc.value(rawPValues[i]));
+            if (rawPValues[i]>0){
+                chiStat += (-2*logFunc.value(rawPValues[i]));
+            }
         }
         return 1-chiSquared.cumulativeProbability(chiStat);
     }

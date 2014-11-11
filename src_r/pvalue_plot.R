@@ -1,0 +1,8 @@
+setwd('~/IdeaProjects/pairdas/data/')
+alt <- read.table(file = 'alt_results.tsv', header=F)
+null <- read.table(file = 'null_results.tsv', header=F)
+cairo_pdf(filename = 'p_values_histo.pdf',width = 8,height = 11,onefile = T,family = 'Lekton')
+par(mfrow=c(2,1))
+hist(alt[,2], xlab='Alt P-values', main="")
+hist(null[null[,2]>=0,2], xlab='Null P-values',main="")
+dev.off()

@@ -5,10 +5,6 @@ import com.upenn.annotation.GeneIsoformInfo;
 import com.upenn.parsers.SimulatedCountParser;
 import com.upenn.parsers.SimulatedCounts;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Iterator;
-
 import static java.lang.System.getenv;
 
 /*try to commit some changes*/
@@ -112,7 +108,7 @@ public class Main {
     public static void writeMatrixToFile(String fileName, List<Double[]> matrix, String[] header, BufferedWriter fileHandle){
         try {
             fileHandle.write(StringUtils.join(header,"\t"));
-        } catch (IOException e) {
+        } catch (IOException e) {t
             System.out.println("Cannot write to pvalues file!");
         }
         Iterator<Double[]> itrRowMatrix = matrix.iterator(); 
@@ -146,27 +142,15 @@ public class Main {
         String filename = homeDir+"/IdeaProjects/pairdas/data/refgene_combined";
         IsoformRegionMatrixParser genePredParser = new IsoformRegionMatrixParser(filename);
         SimulatedCountParser countParser = new SimulatedCountParser
-                (homeDir+"/IdeaProjects/pairdas/data/simu_counts_alt.txt");
+                (homeDir+"/IdeaProjects/pairdas/data/simu_counts_null.txt");
         SimulatedCounts altCounts = countParser.ReadAllCounts();
-        /*int trueTrue = 0;
-        int trueFalse = 0;
-        int falseFalse = 0;
+
         for (GeneIsoformInfo curGene : genePredParser.geneList) {
-            if (altCounts.containsGene(curGene.getName())) {
-                if (altCounts.getNumRegions(curGene.getName()) == curGene.getNumberRegions()) {
-                    System.out.println(curGene.getName() + ":\tTrue\tTrue");
-                    trueTrue +=1;
-                } else {
-                    System.out.println(curGene.getName() + ":\tTrue\tFalse");
-                    trueFalse +=1;
-                }
-            } else {
-                System.out.println(curGene.getName() + ":\tFalse\tFalse");
-                falseFalse +=1;
+            if (altCounts.containsGene(curGene.getName()) && curGene.getNumberRegions()==altCounts.getNumRegions
+                    (curGene.getName())){
+                System.out.println(curGene.getName()+"\t"+Double.toString(altCounts.getFishersPvalueForGene(curGene)));
             }
+
         }
-        System.out.println(Integer.toString(trueTrue)+"\t"+Integer.toString(trueFalse)+"\t"+Integer.toString
-                (falseFalse));
-    */
     }
 }
