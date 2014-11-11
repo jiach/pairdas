@@ -12,6 +12,7 @@ import java.util.*;
  * Created by cheng on 11/10/14.
  * The input format is four columns without headers.
  * gene_name & sub_idx & before_count & after_count
+ * TODO: implement getHotellingUngroupedPValueforGene (done)
  */
 public class SimulatedCounts {
     Table<String,String,List<ArrayList<Integer> > > countTable = null;

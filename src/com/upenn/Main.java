@@ -142,7 +142,7 @@ public class Main {
         String filename = homeDir+"/IdeaProjects/pairdas/data/refgene_combined";
         IsoformRegionMatrixParser genePredParser = new IsoformRegionMatrixParser(filename);
         SimulatedCountParser countParser = new SimulatedCountParser
-                (homeDir+"/IdeaProjects/pairdas/data/simu_counts_null.txt");
+                (homeDir+"/IdeaProjects/pairdas/data/simu_counts_alt.txt");
         SimulatedCounts altCounts = countParser.ReadAllCounts();
 
         for (GeneIsoformInfo curGene : genePredParser.geneList) {

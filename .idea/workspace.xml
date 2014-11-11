@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="08aea8e1-6870-40bc-8938-a9bba1145434" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/upenn/Main.java" afterPath="$PROJECT_DIR$/src/com/upenn/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/upenn/annotation/ReadsMatrix.java" afterPath="$PROJECT_DIR$/src/com/upenn/annotation/ReadsMatrix.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCounts.java" afterPath="$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCounts.java" />
     </list>
     <ignored path="pairdas.iws" />
@@ -72,8 +71,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/upenn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57570714" vertical-offset="1754" max-vertical-offset="2355">
-              <caret line="144" column="69" selection-start-line="144" selection-start-column="69" selection-end-line="144" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.8502496" vertical-offset="1754" max-vertical-offset="2355">
+              <caret line="155" column="1" selection-start-line="155" selection-start-column="1" selection-end-line="155" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -92,21 +91,21 @@
       <file leaf-file-name="SimulatedCounts.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCounts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="856" max-vertical-offset="1800">
-              <caret line="99" column="34" selection-start-line="99" selection-start-column="34" selection-end-line="99" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1815">
+              <caret line="14" column="60" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
               <folding>
-                <element signature="e#544#545#0" expanded="true" />
-                <element signature="e#601#602#0" expanded="true" />
-                <element signature="e#1688#1689#0" expanded="true" />
-                <element signature="e#1748#1749#0" expanded="true" />
-                <element signature="e#2889#2890#0" expanded="true" />
-                <element signature="e#2949#2950#0" expanded="true" />
-                <element signature="e#3287#3295#0" expanded="true" />
-                <element signature="e#3349#3358#0" expanded="true" />
-                <element signature="e#3411#3420#0" expanded="true" />
-                <element signature="e#4354#4362#0" expanded="true" />
-                <element signature="e#4416#4425#0" expanded="true" />
-                <element signature="e#4478#4487#0" expanded="true" />
+                <element signature="e#605#606#0" expanded="true" />
+                <element signature="e#662#663#0" expanded="true" />
+                <element signature="e#1749#1750#0" expanded="true" />
+                <element signature="e#1809#1810#0" expanded="true" />
+                <element signature="e#2950#2951#0" expanded="true" />
+                <element signature="e#3010#3011#0" expanded="true" />
+                <element signature="e#3348#3356#0" expanded="true" />
+                <element signature="e#3410#3419#0" expanded="true" />
+                <element signature="e#3472#3481#0" expanded="true" />
+                <element signature="e#4415#4423#0" expanded="true" />
+                <element signature="e#4477#4486#0" expanded="true" />
+                <element signature="e#4539#4548#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -195,8 +194,8 @@
         <option value="$PROJECT_DIR$/src/com/upenn/IsoformRegionMatrixParser.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCountParser.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/annotation/GeneIsoformInfo.java" />
-        <option value="$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCounts.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/annotation/ReadsMatrix.java" />
+        <option value="$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCounts.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/Main.java" />
       </list>
     </option>
@@ -592,7 +591,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -675,18 +674,18 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1485">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#544#545#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-            <element signature="e#1748#1749#0" expanded="true" />
-            <element signature="e#2889#2890#0" expanded="true" />
-            <element signature="e#2949#2950#0" expanded="true" />
-            <element signature="e#3287#3295#0" expanded="true" />
-            <element signature="e#3349#3358#0" expanded="true" />
-            <element signature="e#3411#3420#0" expanded="true" />
-            <element signature="e#4354#4362#0" expanded="true" />
-            <element signature="e#4416#4425#0" expanded="true" />
-            <element signature="e#4478#4487#0" expanded="true" />
+            <element signature="e#605#606#0" expanded="true" />
+            <element signature="e#662#663#0" expanded="true" />
+            <element signature="e#1749#1750#0" expanded="true" />
+            <element signature="e#1809#1810#0" expanded="true" />
+            <element signature="e#2950#2951#0" expanded="true" />
+            <element signature="e#3010#3011#0" expanded="true" />
+            <element signature="e#3348#3356#0" expanded="true" />
+            <element signature="e#3410#3419#0" expanded="true" />
+            <element signature="e#3472#3481#0" expanded="true" />
+            <element signature="e#4415#4423#0" expanded="true" />
+            <element signature="e#4477#4486#0" expanded="true" />
+            <element signature="e#4539#4548#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -765,18 +764,18 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="571" max-vertical-offset="1260">
           <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
           <folding>
-            <element signature="e#544#545#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-            <element signature="e#1748#1749#0" expanded="true" />
-            <element signature="e#2889#2890#0" expanded="true" />
-            <element signature="e#2949#2950#0" expanded="true" />
-            <element signature="e#3287#3295#0" expanded="true" />
-            <element signature="e#3349#3358#0" expanded="true" />
-            <element signature="e#3411#3420#0" expanded="true" />
-            <element signature="e#4354#4362#0" expanded="true" />
-            <element signature="e#4416#4425#0" expanded="true" />
-            <element signature="e#4478#4487#0" expanded="true" />
+            <element signature="e#605#606#0" expanded="true" />
+            <element signature="e#662#663#0" expanded="true" />
+            <element signature="e#1749#1750#0" expanded="true" />
+            <element signature="e#1809#1810#0" expanded="true" />
+            <element signature="e#2950#2951#0" expanded="true" />
+            <element signature="e#3010#3011#0" expanded="true" />
+            <element signature="e#3348#3356#0" expanded="true" />
+            <element signature="e#3410#3419#0" expanded="true" />
+            <element signature="e#3472#3481#0" expanded="true" />
+            <element signature="e#4415#4423#0" expanded="true" />
+            <element signature="e#4477#4486#0" expanded="true" />
+            <element signature="e#4539#4548#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -855,18 +854,18 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="571" max-vertical-offset="1260">
           <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
           <folding>
-            <element signature="e#544#545#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-            <element signature="e#1748#1749#0" expanded="true" />
-            <element signature="e#2889#2890#0" expanded="true" />
-            <element signature="e#2949#2950#0" expanded="true" />
-            <element signature="e#3287#3295#0" expanded="true" />
-            <element signature="e#3349#3358#0" expanded="true" />
-            <element signature="e#3411#3420#0" expanded="true" />
-            <element signature="e#4354#4362#0" expanded="true" />
-            <element signature="e#4416#4425#0" expanded="true" />
-            <element signature="e#4478#4487#0" expanded="true" />
+            <element signature="e#605#606#0" expanded="true" />
+            <element signature="e#662#663#0" expanded="true" />
+            <element signature="e#1749#1750#0" expanded="true" />
+            <element signature="e#1809#1810#0" expanded="true" />
+            <element signature="e#2950#2951#0" expanded="true" />
+            <element signature="e#3010#3011#0" expanded="true" />
+            <element signature="e#3348#3356#0" expanded="true" />
+            <element signature="e#3410#3419#0" expanded="true" />
+            <element signature="e#3472#3481#0" expanded="true" />
+            <element signature="e#4415#4423#0" expanded="true" />
+            <element signature="e#4477#4486#0" expanded="true" />
+            <element signature="e#4539#4548#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1070,27 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCounts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="856" max-vertical-offset="1800">
-          <caret line="99" column="34" selection-start-line="99" selection-start-column="34" selection-end-line="99" selection-end-column="34" />
-          <folding>
-            <element signature="e#544#545#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-            <element signature="e#1748#1749#0" expanded="true" />
-            <element signature="e#2889#2890#0" expanded="true" />
-            <element signature="e#2949#2950#0" expanded="true" />
-            <element signature="e#3287#3295#0" expanded="true" />
-            <element signature="e#3349#3358#0" expanded="true" />
-            <element signature="e#3411#3420#0" expanded="true" />
-            <element signature="e#4354#4362#0" expanded="true" />
-            <element signature="e#4416#4425#0" expanded="true" />
-            <element signature="e#4478#4487#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/upenn/IsoformRegionMatrixParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
@@ -1125,10 +1103,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCounts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1815">
+          <caret line="14" column="60" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+          <folding>
+            <element signature="e#605#606#0" expanded="true" />
+            <element signature="e#662#663#0" expanded="true" />
+            <element signature="e#1749#1750#0" expanded="true" />
+            <element signature="e#1809#1810#0" expanded="true" />
+            <element signature="e#2950#2951#0" expanded="true" />
+            <element signature="e#3010#3011#0" expanded="true" />
+            <element signature="e#3348#3356#0" expanded="true" />
+            <element signature="e#3410#3419#0" expanded="true" />
+            <element signature="e#3472#3481#0" expanded="true" />
+            <element signature="e#4415#4423#0" expanded="true" />
+            <element signature="e#4477#4486#0" expanded="true" />
+            <element signature="e#4539#4548#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/upenn/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57570714" vertical-offset="1754" max-vertical-offset="2355">
-          <caret line="144" column="69" selection-start-line="144" selection-start-column="69" selection-end-line="144" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.8502496" vertical-offset="1754" max-vertical-offset="2355">
+          <caret line="155" column="1" selection-start-line="155" selection-start-column="1" selection-end-line="155" selection-end-column="1" />
           <folding />
         </state>
       </provider>
