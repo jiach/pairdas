@@ -3,9 +3,8 @@ package com.upenn.annotation;
 import com.upenn.statistics.HotellingTDistribution;
 import org.apache.commons.math3.analysis.function.Log;
 import org.apache.commons.math3.distribution.ChiSquaredDistribution;
-import org.apache.commons.math3.linear.Array2DRowRealMatrix;
-import org.apache.commons.math3.linear.MatrixUtils;
-import org.apache.commons.math3.linear.RealMatrix;
+import org.apache.commons.math3.exception.NullArgumentException;
+import org.apache.commons.math3.linear.*;
 import org.apache.commons.math3.stat.correlation.Covariance;
 import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
 import org.apache.commons.math3.stat.correlation.SpearmansCorrelation;
@@ -203,11 +202,22 @@ public class ReadsMatrix {
         Arrays.fill(vectorOfOnes,1/(double)this.subjectNumber);
         RealMatrix meanLogRatiosMat = new Array2DRowRealMatrix(logRatiosMatrix.preMultiply(vectorOfOnes));
 
-        RealMatrix covInverse = MatrixUtils.inverse(logRatioCov.getCovarianceMatrix());
+        RealMatrix covInverse = null;
+        try {
+            covInverse = MatrixUtils.inverse(logRatioCov.getCovarianceMatrix());
+        } catch (SingularMatrixException e) {
+            return(Double.valueOf(-1));
+        }
         double tSquared = (double)this.subjectNumber*meanLogRatiosMat.transpose().multiply(covInverse).multiply(meanLogRatiosMat).getData()[0][0];
         //System.out.println(tSquared);
+
+        if (logRatiosMatrix.getColumnDimension()>=logRatiosMatrix.getRowDimension()) return (Double.valueOf(-1));
+
+        double pValue = 0;
+
         HotellingTDistribution hotellingT = new HotellingTDistribution(logRatiosMatrix.getColumnDimension(),logRatiosMatrix.getRowDimension()-1);
-        double pValue = hotellingT.getPValue(tSquared);
+        pValue = hotellingT.getPValue(tSquared);
+
         //            if(Double.compare(pValue,Double.NaN)==0){
 //                System.out.println("Log-Ratio Matrix:");
 //                System.out.println(Arrays.deepToString(logRatios));

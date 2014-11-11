@@ -97,4 +97,24 @@ public class SimulatedCounts {
         return curGeneReadsMatrix.getFishersPValue(false);
     }
 
+    public Double getHotellingPvalueForGene(GeneIsoformInfo geneIsoformObj){
+        String geneName = geneIsoformObj.getName();
+        int numRegions = this.getNumRegions(geneName);
+        String[] subIdx = this.getSortedSubIDFromGene(geneName);
+        int numSubjects = subIdx.length;
+        List<String> subjectIdx = new ArrayList<String>();
+        List<Integer> beforeCounts = new ArrayList<Integer>();
+        List<Integer> afterCounts = new ArrayList<Integer>();
+        Map<String, List<ArrayList<Integer>>> curGeneCounts = this.countTable.row(geneName);
+        for (int i = 0; i < numSubjects; i++) {
+            for (int j = 0; j < numRegions; j++) {
+                subjectIdx.add(subIdx[i]);
+                beforeCounts.add(curGeneCounts.get(subIdx[i]).get(0).get(j));
+                afterCounts.add(curGeneCounts.get(subIdx[i]).get(1).get(j));
+            }
+        }
+        ReadsMatrix curGeneReadsMatrix = new ReadsMatrix(subjectIdx, beforeCounts, afterCounts, geneIsoformObj);
+        return curGeneReadsMatrix.getHotellingTPValsUngrouped(false);
+    }
+
 }
