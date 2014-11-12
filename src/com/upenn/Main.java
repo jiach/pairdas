@@ -148,7 +148,7 @@ public class Main {
         for (GeneIsoformInfo curGene : genePredParser.geneList) {
             if (altCounts.containsGene(curGene.getName()) && curGene.getNumberRegions()==altCounts.getNumRegions
                     (curGene.getName())){
-                System.out.println(curGene.getName()+"\t"+Double.toString(altCounts.getHotellingPvalueForGene(curGene)));
+                System.out.println(curGene.getName()+"\t"+Double.toString(altCounts.getFishersPvalueForGene(curGene)));
             }
 
         }

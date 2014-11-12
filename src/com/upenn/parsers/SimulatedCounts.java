@@ -78,6 +78,8 @@ public class SimulatedCounts {
         return this.countTable.containsRow(geneName);
     }
 
+
+
     public Double getFishersPvalueForGene(GeneIsoformInfo geneIsoformObj){
         String geneName = geneIsoformObj.getName();
         int numRegions = this.getNumRegions(geneName);
