@@ -7,7 +7,8 @@ import com.upenn.parsers.SimulatedCountParser;
 import com.upenn.parsers.SimulatedCounts;
 import com.upenn.utils.Logger;
 
-import java.io.File;
+import java.io.*;
+import java.util.zip.GZIPInputStream;
 
 import static java.lang.System.getenv;
 
@@ -167,11 +168,12 @@ public class Main {
         boolean verbose = true;
         String log_fn = "/home/cheng/Dissertation/pairdas/pairdas.log";
         Logger pairdas_logger = new Logger(verbose, new File(log_fn));
-        File gtf_file = new File("/home/cheng/Dissertation/pairdas/ensembl_sorted.gtf");
+        File gtf_file = new File("/home/cheng/Dissertation/pairdas/ensembl_sorted.gtf.gz");
         pairdas_logger.log_message("Parsing gtf file: "+gtf_file.toString());
         GTFParser gtf_parser = new GTFParser(gtf_file);
         pairdas_logger.log_message(Integer.toString(gtf_parser.get_number_genes())+" genes parsed.");
-        
+
+        gtf_parser.get_gene("ENSG00000227232").print_all_coords();
         
         pairdas_logger.end_logging();
     }

@@ -15,7 +15,7 @@ public class TranscriptInfo {
     String gene_id = null;
     String gene_name = null;
     int exon_numbers = 0;
-    Map<Integer,Long[]> exons = new TreeMap<Integer, Long[]>();
+    List<Long[]> exons = new ArrayList<Long[]>();
 
     List<Long[]> CDs = new ArrayList<Long[]>();
     Boolean has_CDs = false;
@@ -71,21 +71,16 @@ public class TranscriptInfo {
 
     public long get_transcript_length(){
         long tx_len = 0;
-        for(Iterator<Map.Entry<Integer, Long[]>> it = this.exons.entrySet().iterator(); it.hasNext(); ) {
-            Map.Entry<Integer, Long[]> entry = it.next();
-            tx_len = tx_len + FastMath.abs(entry.getValue()[1] - entry.getValue()[0])+1;
+        for (Iterator<Long[]> it = this.exons.iterator(); it.hasNext();){
+            Long[] intervals = it.next();
+            tx_len = tx_len + FastMath.abs(intervals[1]-intervals[0])+1;
         }
         return tx_len;
     }
 
     public void add_exon(String[] line){
         Long[] exon_pos = new Long[] {Long.parseLong(line[3]), Long.parseLong(line[4])};
-        String exon_num = this.extract_attribute(line[8],"exon_number");
-        if (exon_num!=null){
-            this.exons.put(Integer.parseInt(exon_num), exon_pos);
-        } else {
-            this.exons.put(this.exon_numbers+1, exon_pos);
-        }
+        this.exons.add(exon_pos);
         this.exon_numbers++;
     }
 
@@ -116,6 +111,16 @@ public class TranscriptInfo {
         }
     }
 
+    public Set<Coordinate> get_coords(){
+        List<Coordinate> coord_list = new ArrayList<Coordinate>();
+        for (Iterator<Long []> it = this.exons.iterator(); it.hasNext();){
+            Long[] cur_coords = it.next();
+            coord_list.add(new Coordinate(cur_coords[0],false));
+            coord_list.add(new Coordinate(cur_coords[1],true));
+        }
+        Set<Coordinate> coord_set = new HashSet<Coordinate>(coord_list);
+        return coord_set;
+    }
     public String get_gene_id(){return this.gene_id;}
 
 }
