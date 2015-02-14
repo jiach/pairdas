@@ -3,7 +3,6 @@ package com.upenn.annotation;
 import com.upenn.statistics.HotellingTDistribution;
 import org.apache.commons.math3.analysis.function.Log;
 import org.apache.commons.math3.distribution.ChiSquaredDistribution;
-import org.apache.commons.math3.exception.NullArgumentException;
 import org.apache.commons.math3.linear.*;
 import org.apache.commons.math3.stat.correlation.Covariance;
 import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
@@ -56,7 +55,6 @@ public class ReadsMatrix {
         this.beforeReadMatrix = new int[this.subjectNumber][numReg];
         this.afterReadMatrix = new int[this.subjectNumber][numReg];
         double[][] logRatioMatrix = new double[this.subjectNumber][numReg];
-
         for (int i = 0; i < this.subjectNumber; i++) {
             for (int j = 0; j < numReg; j++) {
                 this.beforeReadMatrix[i][j]=this.matrixRawReads[i*numReg+j][0];

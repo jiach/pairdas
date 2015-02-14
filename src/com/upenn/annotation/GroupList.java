@@ -14,6 +14,7 @@ public class GroupList {
     int numRegions;
 
     int[][] isoMat;
+
     public GroupList(int[] allRegionLens, String[] allIsoformNames, int[][] isoMat) {
         this.isoMat=isoMat;
         this.numRegions = isoMat.length;

@@ -22,6 +22,12 @@
       <root url="jar://$PROJECT_DIR$/lib/commons-io-2.4-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-io-2.4-test-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/GenomeAnalysisTK.jar!/" />
+      <root url="file:///usr/lib/jvm/java-6-oracle/db/demo/programs" />
+      <root url="file:///usr/lib/jvm/java-6-oracle/db/demo/programs/scores/java/client" />
+      <root url="file:///usr/lib/jvm/java-6-oracle/db/demo/programs/scores/java/common" />
+      <root url="file:///usr/lib/jvm/java-6-oracle/db/demo/programs/scores/java/server" />
+      <root url="file:///usr/lib/jvm/java-6-oracle/db/demo/programs/simple" />
+      <root url="file:///usr/lib/jvm/java-6-oracle/db/demo/programs/vtis/java" />
     </SOURCES>
   </library>
 </component>
