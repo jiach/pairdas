@@ -2,6 +2,7 @@ package com.upenn;
 
 
 import com.upenn.annotation.GeneIsoformInfo;
+import com.upenn.exceptions.IncompleteIntervalListException;
 import com.upenn.parsers.GTFParser;
 import com.upenn.parsers.SimulatedCountParser;
 import com.upenn.parsers.SimulatedCounts;
@@ -166,15 +167,23 @@ public class Main {
     public static void main(String[] args){
         
         boolean verbose = true;
-        String log_fn = "/home/cheng/Dissertation/pairdas/pairdas.log";
+        String homeDir = getenv("HOME");
+        String log_fn = homeDir+"/Dissertation/pairdas/pairdas.log";
         Logger pairdas_logger = new Logger(verbose, new File(log_fn));
-        File gtf_file = new File("/home/cheng/Dissertation/pairdas/ensembl_sorted.gtf.gz");
+        File gtf_file = new File(homeDir+"/Dropbox/Dissertation_2014/DAS_Paird/ensembl_sorted.gtf.gz");
         pairdas_logger.log_message("Parsing gtf file: "+gtf_file.toString());
         GTFParser gtf_parser = new GTFParser(gtf_file);
         pairdas_logger.log_message(Integer.toString(gtf_parser.get_number_genes())+" genes parsed.");
 
         gtf_parser.get_gene("ENSG00000227232").print_all_coords();
-        
+
+        try {
+            gtf_parser.get_gene("ENSG00000227232").get_gene_intervals();
+        } catch (IncompleteIntervalListException e) {
+            e.printStackTrace();
+        }
+        gtf_parser.get_gene("ENSG00000227232").get_tx_interval_matrix();
+
         pairdas_logger.end_logging();
     }
 }

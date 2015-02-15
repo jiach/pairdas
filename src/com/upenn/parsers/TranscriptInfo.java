@@ -123,4 +123,13 @@ public class TranscriptInfo {
     }
     public String get_gene_id(){return this.gene_id;}
 
+    public boolean has_interval(Long[] interval){
+        boolean has_interval = false;
+        for (Long[] exon : this.exons) {
+            if (interval[0]>=exon[0] && interval[1]<=exon[1]) {
+                has_interval = true;
+            }
+        }
+        return has_interval;
+    }
 }
