@@ -121,6 +121,18 @@ public class TranscriptInfo {
         Set<Coordinate> coord_set = new HashSet<Coordinate>(coord_list);
         return coord_set;
     }
+    
+    public List<GenomicInterval> get_intervals(){
+        List<GenomicInterval> interval_list = new ArrayList<GenomicInterval>();
+        
+        for (Iterator<Long []> it = this.exons.iterator(); it.hasNext();){
+            Long[] cur_coords = it.next();
+            interval_list.add(new GenomicInterval(new Long[] {cur_coords[0],cur_coords[1]}));
+        }
+        return interval_list;
+
+    }
+    
     public String get_gene_id(){return this.gene_id;}
 
     public boolean has_interval(Long[] interval){

@@ -3,12 +3,12 @@ package com.upenn;
 
 import com.upenn.annotation.GeneIsoformInfo;
 import com.upenn.exceptions.IncompleteIntervalListException;
-import com.upenn.parsers.GTFParser;
-import com.upenn.parsers.SimulatedCountParser;
-import com.upenn.parsers.SimulatedCounts;
+import com.upenn.parsers.*;
 import com.upenn.utils.Logger;
 
 import java.io.*;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.zip.GZIPInputStream;
 
 import static java.lang.System.getenv;
@@ -173,16 +173,23 @@ public class Main {
         File gtf_file = new File(homeDir+"/Dropbox/Dissertation_2014/DAS_Paird/ensembl_sorted.gtf.gz");
         pairdas_logger.log_message("Parsing gtf file: "+gtf_file.toString());
         GTFParser gtf_parser = new GTFParser(gtf_file);
-        pairdas_logger.log_message(Integer.toString(gtf_parser.get_number_genes())+" genes parsed.");
+        pairdas_logger.log_message(Integer.toString(gtf_parser.get_number_genes()) + " genes parsed.");
 
-        gtf_parser.get_gene("ENSG00000227232").print_all_coords();
-
-        try {
-            gtf_parser.get_gene("ENSG00000227232").get_gene_intervals();
-        } catch (IncompleteIntervalListException e) {
-            e.printStackTrace();
+/*        gtf_parser.get_gene("ENSG00000272282").print_all_coords();
+        gtf_parser.get_gene("ENSG00000272282").print_all_intervals();
+        gtf_parser.get_gene("ENSG00000272282").get_tx_interval_matrix();*/
+        
+        
+        
+//       System.out.println(gtf_parser.get_gene("ENSG00000273493").getTx_num());
+//        gtf_parser.get_gene("ENSG00000273493").print_all_tx();
+        gtf_parser.trim_genes();
+        for(Iterator<Map.Entry<String, GeneInfo>> it = gtf_parser.get_all_genes().entrySet().iterator(); it.hasNext(); ) {
+            Map.Entry<String, GeneInfo> entry = it.next();
+            System.out.println(entry.getKey()+":");
+            entry.getValue().get_tx_interval_matrix();
         }
-        gtf_parser.get_gene("ENSG00000227232").get_tx_interval_matrix();
+//        gtf_parser.get_gene("ENSG00000227232").get_tx_interval_matrix();
 
         pairdas_logger.end_logging();
     }

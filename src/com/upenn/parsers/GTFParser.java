@@ -3,6 +3,7 @@ package com.upenn.parsers;
 import org.apache.commons.io.FilenameUtils;
 
 import java.io.*;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.zip.GZIPInputStream;
@@ -27,10 +28,12 @@ public class GTFParser {
             String line = null;
             while ((line = gtf_fh.readLine())!= null) {
                 String gene_name = TranscriptInfo.extract_attribute(line.split("\t")[8], "gene_id");
+
                 if (geneid_to_geneinfo.containsKey(gene_name)){
                     geneid_to_geneinfo.get(gene_name).add_line(line);
                 } else {
                     geneid_to_geneinfo.put(gene_name,new GeneInfo(gene_name));
+                    geneid_to_geneinfo.get(gene_name).add_line(line);
                 }
             }
 
@@ -49,4 +52,18 @@ public class GTFParser {
     public GeneInfo get_gene (String gene_name){
         return this.geneid_to_geneinfo.get(gene_name);
     }
+    
+    public Map<String, GeneInfo> get_all_genes(){
+        return this.geneid_to_geneinfo;
+    }
+    
+    public void trim_genes(){
+        for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ) {
+            Map.Entry<String, GeneInfo> entry = it.next();
+            if (entry.getValue().getTx_num()<2){
+                it.remove();
+            }
+        }
+    }
+    
 }
