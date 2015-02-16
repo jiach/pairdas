@@ -56,7 +56,7 @@ public class GTFParser {
         return this.geneid_to_geneinfo;
     }
     
-    public void trim_genes(){
+    private void trim_genes(){
         for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ) {
             Map.Entry<String, GeneInfo> entry = it.next();
             if (entry.getValue().getTx_num()<2){
@@ -66,14 +66,14 @@ public class GTFParser {
     }
     
     public List<Interval> get_htsjdk_interval_list(){
+        this.trim_genes();
         List<Interval> new_interval_list = new ArrayList<Interval>();
         
         for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ) {
             Map.Entry<String, GeneInfo> entry = it.next();
-            if (entry.getValue().getTx_num()<2){
-                it.remove();
-            }
+            new_interval_list.addAll(entry.getValue().get_htsjdk_interval_list());
         }
         
+        return new_interval_list;
     }
 }

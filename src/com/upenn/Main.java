@@ -6,10 +6,13 @@ import com.upenn.exceptions.IncompleteIntervalListException;
 import com.upenn.parsers.*;
 import com.upenn.utils.Logger;
 import htsjdk.samtools.SAMFileReader;
+import htsjdk.samtools.SAMRecord;
 import htsjdk.samtools.SamReader;
 import htsjdk.samtools.SamReaderFactory;
+import htsjdk.samtools.util.CloseableIterator;
 import htsjdk.samtools.util.Interval;
 import htsjdk.samtools.util.SamRecordIntervalIteratorFactory;
+import org.broadinstitute.gatk.utils.sam.SAMFileReaderBuilder;
 
 import java.io.*;
 import java.util.Iterator;
@@ -176,9 +179,10 @@ public class Main {
         String log_fn = homeDir+"/Dissertation/pairdas/pairdas.log";
         Logger pairdas_logger = new Logger(verbose, new File(log_fn));
         File gtf_file = new File(homeDir+"/Dropbox/Dissertation_2014/DAS_Paird/ensembl_sorted.gtf.gz");
-        SamReader sam_fh = SamReaderFactory.makeDefault().open(new File("/home/cheng/Dissertation/pairdas/accepted_hits.bam"));
         SamRecordIntervalIteratorFactory sam_reader = new SamRecordIntervalIteratorFactory();
-        
+        SAMFileReaderBuilder  sam_reader_builder = new SAMFileReaderBuilder();
+        sam_reader_builder.setSAMFile(new File("/home/cheng/Dissertation/pairdas/accepted_hits.bam"));
+
         pairdas_logger.log_message("Parsing gtf file: " + gtf_file.toString());
         GTFParser gtf_parser = new GTFParser(gtf_file);
         pairdas_logger.log_message(Integer.toString(gtf_parser.get_number_genes()) + " genes parsed.");
@@ -186,16 +190,18 @@ public class Main {
 
 //       System.out.println(gtf_parser.get_gene("ENSG00000273493").getTx_num());
 //        gtf_parser.get_gene("ENSG00000273493").print_all_tx();
-        gtf_parser.trim_genes();
         
-        for(Iterator<Map.Entry<String, GeneInfo>> it = gtf_parser.get_all_genes().entrySet().iterator(); it.hasNext(); ) {
+/*        for(Iterator<Map.Entry<String, GeneInfo>> it = gtf_parser.get_all_genes().entrySet().iterator(); it.hasNext(); ) {
             Map.Entry<String, GeneInfo> entry = it.next();
             System.out.println(entry.getKey()+":");
-            entry.getValue().get_tx_interval_matrix();
-        }
+        }*/
 //        gtf_parser.get_gene("ENSG00000227232").get_tx_interval_matrix();
 
-        sam_reader.makeSamRecordIntervalIterator(sam_fh, )
+        CloseableIterator<SAMRecord> iterator_sam = sam_reader.makeSamRecordIntervalIterator(sam_reader_builder.build(), gtf_parser.get_htsjdk_interval_list(), true);
+        while(iterator_sam.hasNext()){
+            SAMRecord sam_record = iterator_sam.next();
+            
+        }
         pairdas_logger.end_logging();
     }
 }

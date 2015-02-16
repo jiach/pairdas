@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/upenn/parsers/GTFParser.java" afterPath="$PROJECT_DIR$/src/com/upenn/parsers/GTFParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/upenn/parsers/GeneInfo.java" afterPath="$PROJECT_DIR$/src/com/upenn/parsers/GeneInfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/upenn/Main.java" afterPath="$PROJECT_DIR$/src/com/upenn/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pairdas.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,14 +70,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/upenn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.290323" vertical-offset="2580" max-vertical-offset="3090">
-              <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.8756906" vertical-offset="2713" max-vertical-offset="3180">
+              <caret line="202" column="12" selection-start-line="202" selection-start-column="12" selection-end-line="202" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SAMFileReaderBuilder.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/GenomeAnalysisTK.jar!/org/broadinstitute/gatk/utils/sam/SAMFileReaderBuilder.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.2" vertical-offset="15" max-vertical-offset="555">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,23 +125,23 @@
       <file leaf-file-name="GTFParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/GTFParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="492" max-vertical-offset="1110">
-              <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="657" max-vertical-offset="1110">
+              <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
               <folding>
-                <element signature="e#2293#2303#0" expanded="true" />
+                <element signature="e#2321#2331#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneInfo.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GeneInfo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/GeneInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4274809" vertical-offset="2202" max-vertical-offset="2790">
-              <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2412" max-vertical-offset="2805">
+              <caret line="163" column="8" selection-start-line="163" selection-start-column="8" selection-end-line="163" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6409#6419#0" expanded="true" />
+                <element signature="e#6420#6430#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -175,16 +184,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TranscriptInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/TranscriptInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1829" max-vertical-offset="2235">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -213,9 +212,9 @@
         <option value="$PROJECT_DIR$/src/com/upenn/parsers/GenomicInterval.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/parsers/TranscriptInfo.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/parsers/IntervalCounter.java" />
+        <option value="$PROJECT_DIR$/src/com/upenn/parsers/GeneInfo.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/parsers/GTFParser.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/upenn/parsers/GeneInfo.java" />
       </list>
     </option>
   </component>
@@ -674,12 +673,12 @@
       <workItem from="1423946607552" duration="37000" />
       <workItem from="1423946893963" duration="3029000" />
       <workItem from="1424023129657" duration="10350000" />
-      <workItem from="1424045503739" duration="3103000" />
+      <workItem from="1424045503739" duration="4140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40343000" />
+    <option name="totallyTimeSpent" value="41380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -741,16 +740,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/upenn/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1706" max-vertical-offset="2220">
-          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCountParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
@@ -1103,33 +1092,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/GeneInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2250" max-vertical-offset="2805">
+          <caret line="163" column="8" selection-start-line="163" selection-start-column="8" selection-end-line="163" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6420#6430#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/GTFParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="492" max-vertical-offset="1110">
-          <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="657" max-vertical-offset="1110">
+          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
           <folding>
-            <element signature="e#2293#2303#0" expanded="true" />
+            <element signature="e#2321#2331#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/GenomeAnalysisTK.jar!/org/broadinstitute/gatk/utils/sam/SAMFileReaderBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.2" vertical-offset="15" max-vertical-offset="555">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/upenn/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.290323" vertical-offset="2580" max-vertical-offset="3090">
-          <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8756906" vertical-offset="2713" max-vertical-offset="3180">
+          <caret line="202" column="12" selection-start-line="202" selection-start-column="12" selection-end-line="202" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/GeneInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4274809" vertical-offset="2202" max-vertical-offset="2790">
-          <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6409#6419#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -79,7 +79,7 @@ public class GeneInfo {
         }
     }
     
-    public void get_gene_intervals() throws IncompleteIntervalListException {
+    private void get_gene_intervals() throws IncompleteIntervalListException {
         List<Coordinate> sorted_coord = new ArrayList<Coordinate>(this.get_coords());
         Collections.sort(sorted_coord);
         if (sorted_coord.size()<2) throw new IncompleteIntervalListException("length: "+Integer.toString(sorted_coord.size()));
@@ -119,12 +119,13 @@ public class GeneInfo {
 
     }
 
-    public void get_tx_interval_matrix(){
+    private void get_tx_interval_matrix(){
         try {
             this.get_gene_intervals();
         } catch (IncompleteIntervalListException e) {
             e.printStackTrace();
         }
+        
         this.tx_interval_mat = new ArrayList<boolean[]>();
 
         String[] tx_ids = this.txid_to_tx.keySet().toArray(new String[this.txid_to_tx.keySet().size()]);
