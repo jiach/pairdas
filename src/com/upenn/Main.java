@@ -5,6 +5,7 @@ import com.upenn.annotation.GeneIsoformInfo;
 import com.upenn.exceptions.IncompleteIntervalListException;
 import com.upenn.parsers.*;
 import com.upenn.utils.Logger;
+
 import htsjdk.samtools.SAMFileReader;
 import htsjdk.samtools.SAMRecord;
 import htsjdk.samtools.SamReader;
@@ -179,14 +180,15 @@ public class Main {
         String log_fn = homeDir+"/Dissertation/pairdas/pairdas.log";
         Logger pairdas_logger = new Logger(verbose, new File(log_fn));
         File gtf_file = new File(homeDir+"/Dropbox/Dissertation_2014/DAS_Paird/ensembl_sorted.gtf.gz");
-        SamRecordIntervalIteratorFactory sam_reader = new SamRecordIntervalIteratorFactory();
+/*        SamRecordIntervalIteratorFactory sam_reader = new SamRecordIntervalIteratorFactory();
         SAMFileReaderBuilder  sam_reader_builder = new SAMFileReaderBuilder();
-        sam_reader_builder.setSAMFile(new File("/home/cheng/Dissertation/pairdas/accepted_hits.bam"));
+        sam_reader_builder.setSAMFile(new File("/home/cheng/Dissertation/pairdas/accepted_hits.bam"));*/
 
         pairdas_logger.log_message("Parsing gtf file: " + gtf_file.toString());
         GTFParser gtf_parser = new GTFParser(gtf_file);
         pairdas_logger.log_message(Integer.toString(gtf_parser.get_number_genes()) + " genes parsed.");
 
+        BAMFileReader
 
 //       System.out.println(gtf_parser.get_gene("ENSG00000273493").getTx_num());
 //        gtf_parser.get_gene("ENSG00000273493").print_all_tx();
@@ -197,11 +199,11 @@ public class Main {
         }*/
 //        gtf_parser.get_gene("ENSG00000227232").get_tx_interval_matrix();
 
-        CloseableIterator<SAMRecord> iterator_sam = sam_reader.makeSamRecordIntervalIterator(sam_reader_builder.build(), gtf_parser.get_htsjdk_interval_list(), true);
+/*        CloseableIterator<SAMRecord> iterator_sam = sam_reader.makeSamRecordIntervalIterator(sam_reader_builder.build(), gtf_parser.get_htsjdk_interval_list(), true);
         while(iterator_sam.hasNext()){
             SAMRecord sam_record = iterator_sam.next();
-            
-        }
+
+        }*/
         pairdas_logger.end_logging();
     }
 }

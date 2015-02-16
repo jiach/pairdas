@@ -10,10 +10,9 @@
     <orderEntry type="library" name="commons-math3-3.3" level="project" />
     <orderEntry type="library" name="GenomeAnalysisTK" level="project" />
     <orderEntry type="library" name="guava-18.0" level="project" />
-    <orderEntry type="library" name="htsjdk-1.123" level="project" />
     <orderEntry type="library" name="GenomeAnalysisTK1" level="project" />
     <orderEntry type="library" name="sajr" level="project" />
-    <orderEntry type="library" name="commons-io-2.4-javadoc" level="project" />
+    <orderEntry type="library" name="htsjdk-1.123" level="project" />
+    <orderEntry type="library" name="rackj" level="project" />
   </component>
 </module>
-

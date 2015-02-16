@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="htsjdk-1.123">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/htsjdk-1.123.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
