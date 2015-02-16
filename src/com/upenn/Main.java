@@ -5,6 +5,11 @@ import com.upenn.annotation.GeneIsoformInfo;
 import com.upenn.exceptions.IncompleteIntervalListException;
 import com.upenn.parsers.*;
 import com.upenn.utils.Logger;
+import htsjdk.samtools.SAMFileReader;
+import htsjdk.samtools.SamReader;
+import htsjdk.samtools.SamReaderFactory;
+import htsjdk.samtools.util.Interval;
+import htsjdk.samtools.util.SamRecordIntervalIteratorFactory;
 
 import java.io.*;
 import java.util.Iterator;
@@ -171,19 +176,18 @@ public class Main {
         String log_fn = homeDir+"/Dissertation/pairdas/pairdas.log";
         Logger pairdas_logger = new Logger(verbose, new File(log_fn));
         File gtf_file = new File(homeDir+"/Dropbox/Dissertation_2014/DAS_Paird/ensembl_sorted.gtf.gz");
-        pairdas_logger.log_message("Parsing gtf file: "+gtf_file.toString());
+        SamReader sam_fh = SamReaderFactory.makeDefault().open(new File("/home/cheng/Dissertation/pairdas/accepted_hits.bam"));
+        SamRecordIntervalIteratorFactory sam_reader = new SamRecordIntervalIteratorFactory();
+        
+        pairdas_logger.log_message("Parsing gtf file: " + gtf_file.toString());
         GTFParser gtf_parser = new GTFParser(gtf_file);
         pairdas_logger.log_message(Integer.toString(gtf_parser.get_number_genes()) + " genes parsed.");
 
-/*        gtf_parser.get_gene("ENSG00000272282").print_all_coords();
-        gtf_parser.get_gene("ENSG00000272282").print_all_intervals();
-        gtf_parser.get_gene("ENSG00000272282").get_tx_interval_matrix();*/
-        
-        
-        
+
 //       System.out.println(gtf_parser.get_gene("ENSG00000273493").getTx_num());
 //        gtf_parser.get_gene("ENSG00000273493").print_all_tx();
         gtf_parser.trim_genes();
+        
         for(Iterator<Map.Entry<String, GeneInfo>> it = gtf_parser.get_all_genes().entrySet().iterator(); it.hasNext(); ) {
             Map.Entry<String, GeneInfo> entry = it.next();
             System.out.println(entry.getKey()+":");
@@ -191,6 +195,7 @@ public class Main {
         }
 //        gtf_parser.get_gene("ENSG00000227232").get_tx_interval_matrix();
 
+        sam_reader.makeSamRecordIntervalIterator(sam_fh, )
         pairdas_logger.end_logging();
     }
 }

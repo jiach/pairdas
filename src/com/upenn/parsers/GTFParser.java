@@ -1,11 +1,10 @@
 package com.upenn.parsers;
 
+import htsjdk.samtools.util.Interval;
 import org.apache.commons.io.FilenameUtils;
 
 import java.io.*;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.zip.GZIPInputStream;
 
 /**
@@ -66,4 +65,15 @@ public class GTFParser {
         }
     }
     
+    public List<Interval> get_htsjdk_interval_list(){
+        List<Interval> new_interval_list = new ArrayList<Interval>();
+        
+        for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ) {
+            Map.Entry<String, GeneInfo> entry = it.next();
+            if (entry.getValue().getTx_num()<2){
+                it.remove();
+            }
+        }
+        
+    }
 }

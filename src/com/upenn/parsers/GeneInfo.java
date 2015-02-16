@@ -2,6 +2,7 @@ package com.upenn.parsers;
 
 import com.upenn.exceptions.IncompleteIntervalListException;
 import com.upenn.utils.MiscCalc;
+import htsjdk.samtools.util.Interval;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.math.util.FastMath;
@@ -18,6 +19,7 @@ public class GeneInfo {
     List<Long[]> intervals = new ArrayList<Long[]>();
     List<boolean[]> tx_interval_mat;
     int tx_num = 0;
+    String chr;
     public GeneInfo(String gene_id){
         this.gene_id = gene_id;
     }
@@ -25,6 +27,7 @@ public class GeneInfo {
     public void add_line(String line){
         String[] line_tokens = line.split("\t");
         String tx_id = TranscriptInfo.extract_attribute(line_tokens[8],"transcript_id");
+        this.chr = line_tokens[0];
 
         if (this.txid_to_tx.containsKey(tx_id)) {
             this.txid_to_tx.get(tx_id).add_line(line_tokens);
@@ -150,11 +153,22 @@ public class GeneInfo {
         
         this.tx_interval_mat = new_tx_interval_mat;
         this.intervals = new_intervals;
-        System.out.println("Interval\t"+ StringUtils.join(tx_ids,"\t"));
+        /*System.out.println("Interval\t"+ StringUtils.join(tx_ids,"\t"));
         for (int j = 0; j < this.tx_interval_mat.size(); j++) {
             System.out.println(StringUtils.join(this.intervals.get(j),":")+"\t"+StringUtils.join(ArrayUtils.toString(this.tx_interval_mat.get(j)),"\t"));
+        }*/
+    }
+    
+    public List<Interval> get_htsjdk_interval_list (){
+        this.get_tx_interval_matrix();
+        List<Interval> list_htsjdk_int = new ArrayList<Interval>();
+        
+        for (Iterator<Long[]> iterator = this.intervals.iterator(); iterator.hasNext();) {
+            Long[] cur_int = iterator.next();
+            Interval new_int = new Interval(this.chr, cur_int[0].intValue(),cur_int[1].intValue());
+            list_htsjdk_int.add(new_int);
         }
-
+        return list_htsjdk_int;
     }
     
     public void print_all_tx() {
