@@ -13,7 +13,7 @@ import htsjdk.samtools.SamReaderFactory;
 import htsjdk.samtools.util.CloseableIterator;
 import htsjdk.samtools.util.Interval;
 import htsjdk.samtools.util.SamRecordIntervalIteratorFactory;
-import org.broadinstitute.gatk.utils.sam.SAMFileReaderBuilder;
+
 
 import java.io.*;
 import java.util.Iterator;
@@ -188,8 +188,6 @@ public class Main {
         GTFParser gtf_parser = new GTFParser(gtf_file);
         pairdas_logger.log_message(Integer.toString(gtf_parser.get_number_genes()) + " genes parsed.");
 
-        BAMFileReader
-
 //       System.out.println(gtf_parser.get_gene("ENSG00000273493").getTx_num());
 //        gtf_parser.get_gene("ENSG00000273493").print_all_tx();
         
@@ -204,6 +202,7 @@ public class Main {
             SAMRecord sam_record = iterator_sam.next();
 
         }*/
+        gtf_parser.print_intervals_saf_format();
         pairdas_logger.end_logging();
     }
 }

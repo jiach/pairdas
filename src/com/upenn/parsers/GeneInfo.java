@@ -3,9 +3,8 @@ package com.upenn.parsers;
 import com.upenn.exceptions.IncompleteIntervalListException;
 import com.upenn.utils.MiscCalc;
 import htsjdk.samtools.util.Interval;
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.math.util.FastMath;
+import org.apache.commons.math3.util.FastMath;
 
 import java.util.*;
 
@@ -19,13 +18,22 @@ public class GeneInfo {
     List<Long[]> intervals = new ArrayList<Long[]>();
     List<boolean[]> tx_interval_mat;
     int tx_num = 0;
+    String strand;
+    boolean has_strand = false;
     String chr;
     public GeneInfo(String gene_id){
         this.gene_id = gene_id;
     }
     
     public void add_line(String line){
+
         String[] line_tokens = line.split("\t");
+        this.strand = line_tokens[6];
+        if (this.strand.equals("+") || this.strand.equals("-")){
+            this.has_strand = true;
+        } else {
+            this.has_strand = false;
+        }
         String tx_id = TranscriptInfo.extract_attribute(line_tokens[8],"transcript_id");
         this.chr = line_tokens[0];
 
@@ -119,7 +127,7 @@ public class GeneInfo {
 
     }
 
-    private void get_tx_interval_matrix(){
+    public void get_tx_interval_matrix(){
         try {
             this.get_gene_intervals();
         } catch (IncompleteIntervalListException e) {
@@ -179,6 +187,20 @@ public class GeneInfo {
             for (Iterator<GenomicInterval> it_gi = entry.getValue().get_intervals().iterator();it_gi.hasNext();){
                 it_gi.next().print_me();
             }
+        }
+    }
+
+    public void print_saf(){
+        int interval_id = 1;
+        for (Iterator<Long[]> iterator = this.intervals.iterator();iterator.hasNext();) {
+            Long[] cur_interval = iterator.next();
+            String[] cols = new String[5];
+            cols[0] = this.gene_id+Integer.toString(interval_id);
+            cols[1] = this.chr;
+            cols[2] = Long.toString(cur_interval[0]);
+            cols[3] = Long.toString(cur_interval[1]);
+            cols[4] = this.strand;
+            System.out.println(StringUtils.join(cols,"\t"));
         }
     }
     

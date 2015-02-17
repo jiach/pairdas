@@ -56,17 +56,22 @@ public class GTFParser {
         return this.geneid_to_geneinfo;
     }
     
-    private void trim_genes(){
+    private void process_genes(){
+
         for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ) {
             Map.Entry<String, GeneInfo> entry = it.next();
-            if (entry.getValue().getTx_num()<2){
+            if (entry.getValue().getTx_num()<2 || (!entry.getValue().has_strand)){
                 it.remove();
             }
+        }
+        for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ){
+            Map.Entry<String, GeneInfo> entry = it.next();
+            entry.getValue().get_tx_interval_matrix();
         }
     }
     
     public List<Interval> get_htsjdk_interval_list(){
-        this.trim_genes();
+        this.process_genes();
         List<Interval> new_interval_list = new ArrayList<Interval>();
         
         for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ) {
@@ -75,5 +80,14 @@ public class GTFParser {
         }
         
         return new_interval_list;
+    }
+
+    public void print_intervals_saf_format(){
+        System.out.println("GeneID\tChr\tStart\tEnd\tStrand");
+        for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ){
+            Map.Entry<String, GeneInfo> entry = it.next();
+            entry.getValue().get_tx_interval_matrix();
+            entry.getValue().print_saf();
+        }
     }
 }
