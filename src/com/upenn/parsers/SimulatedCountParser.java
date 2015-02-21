@@ -24,6 +24,13 @@ public class SimulatedCountParser {
         return this.fileName;
     }
 
+    public SimulatedCounts ReadAllCounts(String[] counts){
+        SimulatedCounts allCounts = new SimulatedCounts();
+        for (String line:counts){
+            allCounts.addLine(line);
+        }
+        return allCounts;
+    }
     public SimulatedCounts ReadAllCounts(){
         SimulatedCounts allCounts = new SimulatedCounts();
         try {

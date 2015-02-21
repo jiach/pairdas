@@ -13,6 +13,7 @@ import htsjdk.samtools.SamReaderFactory;
 import htsjdk.samtools.util.CloseableIterator;
 import htsjdk.samtools.util.Interval;
 import htsjdk.samtools.util.SamRecordIntervalIteratorFactory;
+import org.apache.commons.lang3.StringUtils;
 
 
 import java.io.*;
@@ -171,7 +172,7 @@ public class Main {
     }
 }*/
 
-
+/*
 public class Main {
     public static void main(String[] args){
         
@@ -183,7 +184,7 @@ public class Main {
 /*        SamRecordIntervalIteratorFactory sam_reader = new SamRecordIntervalIteratorFactory();
         SAMFileReaderBuilder  sam_reader_builder = new SAMFileReaderBuilder();
         sam_reader_builder.setSAMFile(new File("/home/cheng/Dissertation/pairdas/accepted_hits.bam"));*/
-
+/*
         pairdas_logger.log_message("Parsing gtf file: " + gtf_file.toString());
         GTFParser gtf_parser = new GTFParser(gtf_file);
         pairdas_logger.log_message(Integer.toString(gtf_parser.get_number_genes()) + " genes parsed.");
@@ -201,8 +202,17 @@ public class Main {
         while(iterator_sam.hasNext()){
             SAMRecord sam_record = iterator_sam.next();
 
-        }*/
+        }*//*
         gtf_parser.print_intervals_saf_format();
         pairdas_logger.end_logging();
+    }
+}*/
+
+public class Main {
+    public static void main(String[] args) {
+        String homeDir = getenv("HOME");
+        String fc_fn = homeDir+"/Dropbox/Dissertation2015/DASPaired/counts.txt.gz";
+        FeatureCountsParser fc_parse = new FeatureCountsParser(new File(fc_fn));
+        System.out.println(StringUtils.join(fc_parse.get_arr_str(),"\n"));
     }
 }
