@@ -158,8 +158,8 @@ public class Main {
         String homeDir = getenv("HOME");
         String filename = homeDir+"/IdeaProjects/pairdas/data/refgene_combined";
         IsoformRegionMatrixParser genePredParser = new IsoformRegionMatrixParser(filename);
-        SimulatedCountParser countParser = new SimulatedCountParser
-                (homeDir+"/IdeaProjects/pairdas/data/simu_counts_alt.txt");
+        SimulatedCountParser countParser = new SimulatedCountParser();
+        countParser.setFileName(homeDir+"/IdeaProjects/pairdas/data/simu_counts_alt.txt");
         SimulatedCounts altCounts = countParser.ReadAllCounts();
 
         for (GeneIsoformInfo curGene : genePredParser.geneList) {
@@ -211,8 +211,17 @@ public class Main {
 public class Main {
     public static void main(String[] args) {
         String homeDir = getenv("HOME");
-        String fc_fn = homeDir+"/Dropbox/Dissertation2015/DASPaired/counts.txt.gz";
-        FeatureCountsParser fc_parse = new FeatureCountsParser(new File(fc_fn));
-        System.out.println(StringUtils.join(fc_parse.get_arr_str(),"\n"));
+        //String fc_fn = homeDir+"/Dropbox/Dissertation2015/DASPaired/counts.txt.gz";
+        //FeatureCountsParser fc_parse = new FeatureCountsParser(new File(fc_fn));
+        //fc_parse.trim();
+        //fc_parse.print_all();
+        //SimulatedCountParser count_parser = new SimulatedCountParser();
+        //count_parser.setFileName("/home/cheng/IdeaProjects/pairdas/data/simu_reads2.txt");
+        //SimulatedCounts all_counts = count_parser.ReadAllCounts();
+        //all_counts.printAll();
+        File gtf_file = new File(homeDir+"/Dropbox/Dissertation_2014/DAS_Paird/ensembl_sorted.gtf.gz");
+        GTFParser gtf_parser = new GTFParser(gtf_file);
+        gtf_parser.print_intervals_iaf_format();
+//        System.out.println(StringUtils.join(fc_parse.get_arr_str(),"\n"));
     }
 }

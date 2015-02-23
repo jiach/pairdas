@@ -24,6 +24,7 @@ public class FeatureCountsParser {
 
             String line = fc_counts_fh.readLine();
             String header = fc_counts_fh.readLine();
+            
             while ((line = fc_counts_fh.readLine())!= null) {
                 String[] line_tokens = line.split("\t");
                 String gene_id = line_tokens[0].split("_")[0];
@@ -43,11 +44,28 @@ public class FeatureCountsParser {
 
     public String[] get_arr_str(){
         List<String> all_str = new ArrayList<String>();
+        int idx = 0;
         for (Iterator<Map.Entry<String, FeatureCounts>> iterator=this.fc_map.entrySet().iterator();iterator.hasNext();){
             Map.Entry<String,FeatureCounts> entry = iterator.next();
+            System.out.println(idx++);
             all_str.addAll(entry.getValue().get_str_arr());
         }
         return all_str.toArray(new String[all_str.size()]);
     }
-
+    
+    public void print_all(){
+        for (Iterator<Map.Entry<String, FeatureCounts>> iterator=this.fc_map.entrySet().iterator();iterator.hasNext();){
+            Map.Entry<String,FeatureCounts> entry = iterator.next();
+            System.out.println(entry.getValue().get_str());
+        }
+    }
+    
+    public void trim(){
+        for (Iterator<Map.Entry<String, FeatureCounts>> iterator=this.fc_map.entrySet().iterator();iterator.hasNext();){
+            Map.Entry<String,FeatureCounts> entry = iterator.next();
+            if (entry.getValue().get_total_count()==0){
+                iterator.remove();
+            }
+        }
+    }
 }

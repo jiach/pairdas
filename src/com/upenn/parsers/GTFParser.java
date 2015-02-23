@@ -13,7 +13,7 @@ import java.util.zip.GZIPInputStream;
  */
 public class GTFParser {
     Map<String, GeneInfo> geneid_to_geneinfo = new TreeMap<String, GeneInfo>();
-    
+    boolean genes_processed = false;
     public GTFParser(File gtf_fn){
         try {
             BufferedReader gtf_fh;
@@ -58,36 +58,42 @@ public class GTFParser {
     
     private void process_genes(){
 
-        for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ) {
-            Map.Entry<String, GeneInfo> entry = it.next();
-            if (entry.getValue().getTx_num()<2 || (!entry.getValue().has_strand)){
-                it.remove();
+        if (this.genes_processed==false){
+            for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ) {
+                Map.Entry<String, GeneInfo> entry = it.next();
+                if (entry.getValue().getTx_num()<2 || (!entry.getValue().has_strand)){
+                    it.remove();
+                }
+            }
+            for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ){
+                Map.Entry<String, GeneInfo> entry = it.next();
+                entry.getValue().get_tx_interval_matrix();
             }
         }
-        for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ){
-            Map.Entry<String, GeneInfo> entry = it.next();
-            entry.getValue().get_tx_interval_matrix();
-        }
+        this.genes_processed=true;
     }
     
-    public List<Interval> get_htsjdk_interval_list(){
-        this.process_genes();
-        List<Interval> new_interval_list = new ArrayList<Interval>();
-        
-        for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ) {
-            Map.Entry<String, GeneInfo> entry = it.next();
-            new_interval_list.addAll(entry.getValue().get_htsjdk_interval_list());
-        }
-        
-        return new_interval_list;
-    }
 
     public void print_intervals_saf_format(){
+        if (this.genes_processed == false) {
+            this.process_genes();
+        }
         System.out.println("GeneID\tChr\tStart\tEnd\tStrand");
         for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ){
             Map.Entry<String, GeneInfo> entry = it.next();
-            entry.getValue().get_tx_interval_matrix();
             entry.getValue().print_saf();
         }
     }
+
+    public void print_intervals_iaf_format() {
+        if (this.genes_processed == false) {
+            this.process_genes();
+        }
+        for (Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ) {
+            Map.Entry<String, GeneInfo> entry = it.next();
+            entry.getValue().print_iaf();
+        }
+    }
+
+    
 }

@@ -12,8 +12,7 @@ import java.io.IOException;
 public class SimulatedCountParser {
     String fileName = null;
 
-    public SimulatedCountParser(String fileName) {
-        this.fileName = fileName;
+    public SimulatedCountParser() {
     }
 
     public void setFileName(String fileName){
@@ -48,5 +47,6 @@ public class SimulatedCountParser {
         }
         return allCounts;
     }
+
 
 }
