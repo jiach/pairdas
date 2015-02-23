@@ -32,7 +32,7 @@ public class IsoformRegionMatrixParser {
             String[] isoNames = null;
             while ((line = in.readLine()) != null){
                 String[] lineTokens = line.split("\t");
-                if (lineTokens[lineTokens.length-1].startsWith("N")){
+                if (!Character.isDigit(lineTokens[lineTokens.length - 1].charAt(0))){
                     //System.out.println(regionIsoMat);
                     if(addElement){
                         this.geneList.add(new GeneIsoformInfo(curGeneName, curGeneChr, curGeneStrand, curGeneStart, curGeneEnd, isoNames, startPos, endPos, regionIsoMat));

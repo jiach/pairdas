@@ -56,19 +56,21 @@ public class GTFParser {
         return this.geneid_to_geneinfo;
     }
     
-    private void process_genes(){
+    public void process_genes(){
 
         if (this.genes_processed==false){
-            for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ) {
-                Map.Entry<String, GeneInfo> entry = it.next();
-                if (entry.getValue().getTx_num()<2 || (!entry.getValue().has_strand)){
-                    it.remove();
-                }
-            }
             for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ){
                 Map.Entry<String, GeneInfo> entry = it.next();
                 entry.getValue().get_tx_interval_matrix();
             }
+            for(Iterator<Map.Entry<String, GeneInfo>> it = this.geneid_to_geneinfo.entrySet().iterator(); it.hasNext(); ) {
+                Map.Entry<String, GeneInfo> entry = it.next();
+                if (entry.getValue().getTx_num()<2 || (!entry.getValue().has_strand) || (entry.getValue().if_empty_after_trim())){
+                    it.remove();
+                }
+            }
+            
+
         }
         this.genes_processed=true;
     }

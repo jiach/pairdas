@@ -219,9 +219,24 @@ public class Main {
         //count_parser.setFileName("/home/cheng/IdeaProjects/pairdas/data/simu_reads2.txt");
         //SimulatedCounts all_counts = count_parser.ReadAllCounts();
         //all_counts.printAll();
-        File gtf_file = new File(homeDir+"/Dropbox/Dissertation_2014/DAS_Paird/ensembl_sorted.gtf.gz");
-        GTFParser gtf_parser = new GTFParser(gtf_file);
-        gtf_parser.print_intervals_iaf_format();
+        //File gtf_file = new File(homeDir+"/Dropbox/Dissertation_2014/DAS_Paird/ensembl_sorted.gtf.gz");
+        //GTFParser gtf_parser = new GTFParser(gtf_file);
+        //gtf_parser.process_genes();
+        //gtf_parser.print_intervals_iaf_format();
 //        System.out.println(StringUtils.join(fc_parse.get_arr_str(),"\n"));
+
+        String filename = homeDir+"/IdeaProjects/pairdas/data/ensembl_combined";
+        IsoformRegionMatrixParser genePredParser = new IsoformRegionMatrixParser(filename);
+        SimulatedCountParser countParser = new SimulatedCountParser();
+        countParser.setFileName(homeDir+"/Dropbox/Dissertation2015/DASPaired/simu_reads2.txt");
+        SimulatedCounts altCounts = countParser.ReadAllCounts();
+
+        for (GeneIsoformInfo curGene : genePredParser.geneList) {
+            if (altCounts.containsGene(curGene.getName()) && curGene.getNumberRegions()==altCounts.getNumRegions
+                    (curGene.getName())){
+                System.out.println(curGene.getName()+"\t"+Double.toString(altCounts.getFishersPvalueForGene(curGene)));
+            }
+
+        }
     }
 }

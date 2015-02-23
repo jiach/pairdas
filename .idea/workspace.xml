@@ -7,14 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08aea8e1-6870-40bc-8938-a9bba1145434" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/pairdas_jar/pairdas.jar" afterPath="$PROJECT_DIR$/out/artifacts/pairdas_jar/pairdas.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/upenn/parsers/FeatureCounts.java" afterPath="$PROJECT_DIR$/src/com/upenn/parsers/FeatureCounts.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/upenn/parsers/FeatureCountsParser.java" afterPath="$PROJECT_DIR$/src/com/upenn/parsers/FeatureCountsParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/ensembl_combined" afterPath="$PROJECT_DIR$/data/ensembl_combined" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/upenn/parsers/GTFParser.java" afterPath="$PROJECT_DIR$/src/com/upenn/parsers/GTFParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/upenn/parsers/GeneInfo.java" afterPath="$PROJECT_DIR$/src/com/upenn/parsers/GeneInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/upenn/IsoformRegionMatrixParser.java" afterPath="$PROJECT_DIR$/src/com/upenn/IsoformRegionMatrixParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/upenn/Main.java" afterPath="$PROJECT_DIR$/src/com/upenn/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCountParser.java" afterPath="$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCountParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pairdas.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,9 +80,11 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/upenn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7993367" vertical-offset="2263" max-vertical-offset="3180">
-              <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.9141631" vertical-offset="2946" max-vertical-offset="3705">
+              <caret line="239" column="9" selection-start-line="239" selection-start-column="9" selection-end-line="239" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,8 +92,8 @@
       <file leaf-file-name="IsoformRegionMatrixParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/upenn/IsoformRegionMatrixParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1080">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -103,11 +102,21 @@
       <file leaf-file-name="FeatureCountsParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/FeatureCountsParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="526" max-vertical-offset="1140">
+            <state vertical-scroll-proportion="0.0" vertical-offset="428" max-vertical-offset="1140">
               <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IntervalCounter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/IntervalCounter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,21 +137,8 @@
       <file leaf-file-name="SimulatedCountParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCountParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="795">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="765">
               <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding>
-                <element signature="e#423#424#0" expanded="true" />
-                <element signature="e#459#460#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GeneIsoformInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/upenn/annotation/GeneIsoformInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1860">
-              <caret line="48" column="43" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -161,12 +157,13 @@
       <file leaf-file-name="GeneInfo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/GeneInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3301" max-vertical-offset="3915">
-              <caret line="233" column="31" selection-start-line="233" selection-start-column="31" selection-end-line="233" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3398" max-vertical-offset="4110">
+              <caret line="272" column="0" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3256#3268#0" expanded="true" />
-                <element signature="e#8513#8521#0" expanded="true" />
+                <element signature="e#598#606#0" expanded="true" />
+                <element signature="e#3300#3312#0" expanded="true" />
+                <element signature="e#8557#8565#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -188,8 +185,8 @@
       <file leaf-file-name="GTFParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/GTFParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="796" max-vertical-offset="1410">
-              <caret line="87" column="33" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -210,7 +207,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/com/upenn/statistics/HotellingTDistribution.java" />
-        <option value="$PROJECT_DIR$/src/com/upenn/IsoformRegionMatrixParser.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/annotation/GeneIsoformInfo.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCounts.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/annotation/ReadsMatrix.java" />
@@ -225,6 +221,7 @@
         <option value="$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCountParser.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/parsers/FeatureCountsParser.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/parsers/FeatureCounts.java" />
+        <option value="$PROJECT_DIR$/src/com/upenn/IsoformRegionMatrixParser.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/parsers/GeneInfo.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/parsers/GTFParser.java" />
         <option value="$PROJECT_DIR$/src/com/upenn/Main.java" />
@@ -751,12 +748,12 @@
       <workItem from="1424487770906" duration="5027000" />
       <workItem from="1424500271760" duration="2561000" />
       <workItem from="1424568638969" duration="7667000" />
-      <workItem from="1424647829707" duration="3208000" />
+      <workItem from="1424647829707" duration="5478000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65794000" />
+    <option name="totallyTimeSpent" value="68064000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -765,7 +762,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32708332" sideWeight="0.498618" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32708332" sideWeight="0.498618" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -773,7 +770,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2274678" sideWeight="0.4971623" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22708334" sideWeight="0.4971623" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16804865" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1092,13 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/IntervalCounter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/rackj.jar!/rnaseq/ExonCounter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3865" max-vertical-offset="4620">
@@ -1111,25 +1101,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1860">
           <caret line="48" column="43" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCountParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="795">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/upenn/IsoformRegionMatrixParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1080">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1153,14 +1124,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/GeneInfo.java">
+    <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/FeatureCounts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3301" max-vertical-offset="3915">
-          <caret line="233" column="31" selection-start-line="233" selection-start-column="31" selection-end-line="233" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="1290">
+          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3256#3268#0" expanded="true" />
-            <element signature="e#8513#8521#0" expanded="true" />
+            <element signature="e#554#578#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1175,30 +1145,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/FeatureCounts.java">
+    <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/IntervalCounter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="1290">
-          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/SimulatedCountParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="795">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/GeneInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3398" max-vertical-offset="4110">
+          <caret line="272" column="0" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#554#578#0" expanded="true" />
+            <element signature="e#598#606#0" expanded="true" />
+            <element signature="e#3300#3312#0" expanded="true" />
+            <element signature="e#8557#8565#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/upenn/IsoformRegionMatrixParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/upenn/parsers/GTFParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="796" max-vertical-offset="1410">
-          <caret line="87" column="33" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/upenn/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7993367" vertical-offset="2263" max-vertical-offset="3180">
-          <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.9141631" vertical-offset="2946" max-vertical-offset="3705">
+          <caret line="239" column="9" selection-start-line="239" selection-start-column="9" selection-end-line="239" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

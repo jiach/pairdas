@@ -3,6 +3,7 @@ package com.upenn.parsers;
 import com.upenn.exceptions.IncompleteIntervalListException;
 import com.upenn.utils.MiscCalc;
 import htsjdk.samtools.util.Interval;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.math3.util.FastMath;
 
@@ -214,6 +215,7 @@ public class GeneInfo {
         //same as refgene_combined in the data folder.
         List<String> iaf_str_arr = new ArrayList<String>();
 
+        
         Long min_coord=Long.MAX_VALUE;
         Long max_coord= Long.MIN_VALUE;
         for (int i = 0; i < this.intervals.size(); i++) {
@@ -224,7 +226,7 @@ public class GeneInfo {
             cur_int_str+="\t"+this.intervals.get(i)[0].toString();
             cur_int_str+="\t"+this.intervals.get(i)[1].toString();
             min_coord = Math.min(min_coord,this.intervals.get(i)[0]);
-            max_coord = Math.max(max_coord,this.intervals.get(i)[1]);
+            max_coord = Math.max(max_coord, this.intervals.get(i)[1]);
             cur_int_str+="\t"+this.get_tx_interval_mat_str(this.tx_interval_mat.get(i));
 
             iaf_str_arr.add(cur_int_str);
@@ -255,5 +257,16 @@ public class GeneInfo {
         return  out_str;
     }
     
+    public void print_tx_int_mat(){
+        for (Iterator<boolean []> it = this.tx_interval_mat.iterator();it.hasNext();){
+            boolean[] cur_mat = it.next();
+            System.out.println(this.get_tx_interval_mat_str(cur_mat));
+        }
+    }
+    
+    public boolean if_empty_after_trim(){
+        if (this.intervals.size()==0) {return true;}
+        else {return false;}
+    }
 }
 
