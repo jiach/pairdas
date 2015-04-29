@@ -172,42 +172,26 @@ public class Main {
     }
 }*/
 
-/*
+
 public class Main {
     public static void main(String[] args){
         
         boolean verbose = true;
         String homeDir = getenv("HOME");
-        String log_fn = homeDir+"/Dissertation/pairdas/pairdas.log";
+        String log_fn = homeDir+"/Dropbox/Dissertation2015/DASPaired/simu2/gtf_parser.log";
         Logger pairdas_logger = new Logger(verbose, new File(log_fn));
-        File gtf_file = new File(homeDir+"/Dropbox/Dissertation_2014/DAS_Paird/ensembl_sorted.gtf.gz");
-/*        SamRecordIntervalIteratorFactory sam_reader = new SamRecordIntervalIteratorFactory();
-        SAMFileReaderBuilder  sam_reader_builder = new SAMFileReaderBuilder();
-        sam_reader_builder.setSAMFile(new File("/home/cheng/Dissertation/pairdas/accepted_hits.bam"));*/
-/*
+        File gtf_file = new File(homeDir+"/Dropbox/Dissertation2015/DASPaired/simu2/hg19_1_22.gtf.gz");
+
         pairdas_logger.log_message("Parsing gtf file: " + gtf_file.toString());
         GTFParser gtf_parser = new GTFParser(gtf_file);
         pairdas_logger.log_message(Integer.toString(gtf_parser.get_number_genes()) + " genes parsed.");
 
-//       System.out.println(gtf_parser.get_gene("ENSG00000273493").getTx_num());
-//        gtf_parser.get_gene("ENSG00000273493").print_all_tx();
-        
-/*        for(Iterator<Map.Entry<String, GeneInfo>> it = gtf_parser.get_all_genes().entrySet().iterator(); it.hasNext(); ) {
-            Map.Entry<String, GeneInfo> entry = it.next();
-            System.out.println(entry.getKey()+":");
-        }*/
-//        gtf_parser.get_gene("ENSG00000227232").get_tx_interval_matrix();
-
-/*        CloseableIterator<SAMRecord> iterator_sam = sam_reader.makeSamRecordIntervalIterator(sam_reader_builder.build(), gtf_parser.get_htsjdk_interval_list(), true);
-        while(iterator_sam.hasNext()){
-            SAMRecord sam_record = iterator_sam.next();
-
-        }*//*
         gtf_parser.print_intervals_saf_format();
         pairdas_logger.end_logging();
     }
-}*/
+}
 
+/*
 public class Main {
     public static void main(String[] args) {
         String homeDir = getenv("HOME");
@@ -239,4 +223,4 @@ public class Main {
 
         }
     }
-}
+}*/
